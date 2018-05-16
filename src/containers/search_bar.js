@@ -15,13 +15,18 @@ export default class SearchBar extends Component {
     });
   }
 
+  onFormSubmit(event) {
+    event.preventDefault();
+    // Fetch weather data here 
+  }
+
   render() {
     return (
-      <form className="input-group">
+      <form onSubmit={this.onFormSubmit} className="input-group">
         <input
           onChange={this.onInputChange}
           value={this.state.term}
-          placeholder="Get a 5-day Forecast in Your Favorite Cities"
+          placeholder="Get a 5-day Forecast For Your Favorite Cities"
           className="form-control"
         />
         <span className="input-group-btn">
